@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    	<!-- View Form -->
+
+    	<record model="ir.ui.view" id="siscond_infrastructure_view_form">
+		    <field name="name">Infrastructure Form</field>
+		    <field name="model">siscond_infrastructure.infrastructure</field>
+		    <field name="priority" eval="16"/>
+		    <field name="arch" type="xml">
+		        <form string="Idea form">
+		        	<sheet>
+				    <group colspan="4">
+				        <group colspan="2" col="2">
+				            <separator string="General Infrastructure" colspan="2"/>
+				            <field name="name"/>
+				            <field name="active"/>
+				            <field name="tower_ids"/>
+				        </group>
+				    </group>
+				</sheet>
+				</form>
+		    </field>
+		</record>
+
+
+		<!-- View Tree -->
+
+		<record model="ir.ui.view" id="siscond_infrastructure_view_tree">
+		    <field name="name">Infrastructure Tree</field>
+		    <field name="model">siscond_infrastructure.infrastructure</field>
+		    <field name="priority" eval="16"/>
+		    <field name="arch" type="xml">
+		        <tree string="Idea form">
+				          
+				            <field name="name"/>
+				            <field name="active"/>
+				            <field name="tower_ids"/>
+				</tree>
+		    </field>
+		</record>
+
+
+
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="siscond_infrastructure_action">
+            <field name="name">Infrastructure</field>
+            <field name="res_model">siscond_infrastructure.infrastructure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first structure
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_siscond_menu" name="SisCond"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="siscond_menu" name="SisCond"
+                  parent="main_siscond_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="setting_infrastructure_menu" name="Setting Infrastructure" parent="siscond_menu"
+                  action="siscond_infrastructure_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>
