@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+    <openerp>
+    <data>
+        <record model="ir.ui.view" id="view_sis_cond_registro_contrato_form">
+            <field name="name">sis_cond.registro_contrato.form</field>
+            <field name="model">sis_cond.registro_contrato</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Registro de Contrato">
+                    <sheet>
+                    <field name="id" invisible="1"/>
+                    <separator string="Registro de Contarto" colspan="4"/>
+                    
+                    <field 
+                        name="logo"
+                        widget='image' 
+                        class="oe_left oe_avatar" 
+                        options='{"preview_image": "logo", "size": [90, 90]}'
+                        />
+                        <field  name="name" 
+                                string="Razón Social" 
+                                placeholder="Razón Social"  
+                                required ="1"
+                                help="Nombre de la Razón Social"
+                                />
+                        <field  name="rif" 
+                                placeholder="R.I.F."
+                                required="1"
+                                help="Numero del R.I.F. de la Razón Social"
+                                
+                                />
+                        
+                        <field  name="phone" 
+                                placeholder="Télefono"
+                                required="1"
+                                help="Numero del Télefono de la Razón Social"
+                                
+                                />
+                        <field  name="currency_id" 
+                                
+                                />
+                        <field  name="cant_torre"/>
+                        <field  name="cant_aptos"/>
+                        <field  name="cant_local"/>
+<!--
+                        data-inputmask="'mask': 'G-99999999-9'"
+                        data-inputmask="'mask': '9999-9999999'"
+-->
+                    </sheet>
+            </form>
+        </field>
+    </record>
+        <record model="ir.ui.view" id="view_sis_cond_registro_contrato_tree">
+            <field name="name">sis_cond.registro_contrato.tree</field>
+            <field name="model">sis_cond.registro_contrato</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Registro de Contrato">
+                    <field name="name"/>
+                    <field name="rif"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_sis_cond_registro_contrato">
+            <field name="name">Registro Contarto</field>
+            <field name="res_model">sis_cond.registro_contrato</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        
+<!--
+            <field name="view_id" ref="res_ept_ent_entidades_kanban_view"/>
+-->
+<!--
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Aqui se regi
+                </p>
+            </field>
+-->
+        
+        <menuitem name="Registro de Contato" 
+            id="menu_reg_contrato" 
+            sequence="0"
+            />
+        <menuitem name="Registro de Contato" 
+            id="id_reg_contrato" 
+            parent="menu_reg_contrato" 
+            sequence="0"
+            />
+            <menuitem name="Registro" 
+                id="regsitro_contrato" 
+                action="action_sis_cond_registro_contrato" 
+                parent="id_reg_contrato" 
+                sequence="3"
+                />
+        
+    </data>
+    </openerp>
