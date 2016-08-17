@@ -13,12 +13,15 @@
 		        	<sheet>
 				    <group colspan="4">
 				        <group colspan="2" col="2">
-				            <separator string="General Floor" colspan="2"/>
+				            <separator string="Piso" colspan="2"/>
 				            <field name="name"/>
 				            <field name="active"/>
-				            <field name="apartment_ids">
+				            <field name="property_ids">
 				            	<tree editable="True">
 				            		<field name="name"/>
+				            		<field name="type_property_id"/>
+				            		<field name="owner_ids" widget="many2many_tags"/>
+				            		<field name="aliquot"/>
 				            	</tree>
 				            </field>
 				        </group>
@@ -39,8 +42,8 @@
 		        <tree string="Idea form">
 				          
 				            <field name="name"/>
+				            <field name="property_ids"/>
 				            <field name="active"/>
-				            <field name="apartment_ids"/>
 				</tree>
 		    </field>
 		</record>
@@ -63,19 +66,5 @@
             </field>
         </record>
 
-        <!-- top level menu: no parent -->
-        <!-- <menuitem id="main_siscond_menu" name="SisCond"/> -->
-        <!-- A first level in the left side menu is needed
-             before using action= attribute -->
-        <!-- <menuitem id="siscond_menu" name="SisCond" -->
-                  <!-- parent="main_siscond_menu"/> -->
-        <!-- the following menuitem should appear *after*
-             its parent openacademy_menu and *after* its
-             action course_list_action -->
-        <!-- <menuitem id="setting_floor_menu" name="Setting Floor" parent="siscond_menu" -->
-                  <!-- action="siscond_floor_action"/> -->
-        <!-- Full id location:
-             action="openacademy.course_list_action"
-             It is not required when it is the same module -->
     </data>
 </openerp>

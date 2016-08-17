@@ -1,1 +1,0 @@
-siscond_property.py

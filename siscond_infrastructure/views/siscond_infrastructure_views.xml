@@ -16,9 +16,22 @@
 				            <separator string="General Infrastructure" colspan="2"/>
 				            <field name="name"/>
 				            <field name="active"/>
-				            <field name="tower_ids"/>
 				        </group>
 				    </group>
+             <separator string="Registro de Propiedades"/>
+             <notebook>
+                <page string="Registro de Torres">
+                  <field name="tower_ids"/>
+                </page>
+                <page string="Registro de Propiedades Comunes">
+                  <field name="property_commons_ids">
+                    <tree editable="True">
+                        <field name="name"/>
+                        <field name="description"/>
+                      </tree>
+                  </field>
+                </page>
+             </notebook> 
 				</sheet>
 				</form>
 		    </field>
@@ -35,9 +48,9 @@
 		        <tree string="Idea form">
 				          
 				            <field name="name"/>
-				            <field name="active"/>
 				            <field name="tower_ids"/>
-				</tree>
+                    <field name="active"/>
+				    </tree>
 		    </field>
 		</record>
 
