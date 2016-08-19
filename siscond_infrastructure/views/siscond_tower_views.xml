@@ -13,11 +13,25 @@
 		        	<sheet>
 				    <group colspan="4">
 				        <group colspan="2" col="2">
-				            <separator string="General tower" colspan="2"/>
+				            <separator string="Torre" colspan="2"/>
 				            <field name="name"/>
 				            <field name="active"/>
-				            <!-- <field name="infrastructure_id"/> -->
-				            <field name="floor_ids"/>
+				            
+				            <separator string="Registro de Propiedades"/>
+				             <notebook>
+				                <page string="Registro de Pisos">
+				                  <field name="floor_ids"/>
+				                </page>
+				                <page string="Registro de Propiedades Comunes">
+				                  <field name="property_commons_ids">
+				                    <tree editable="True">
+				                        <field name="name"/>
+				                        <field name="description"/>
+				                      </tree>
+				                  </field>
+				                </page>
+				             </notebook> 
+				            
 				            	
 				        </group>
 				    </group>
@@ -38,8 +52,8 @@
 				          
 				            <field name="name"/>
 				            <field name="infrastructure_id"/>
-				            <field name="active"/>
 				            <field name="floor_ids"/>
+				            <field name="active"/>
 				</tree>
 		    </field>
 		</record>
