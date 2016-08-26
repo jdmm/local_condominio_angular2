@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    	<!-- View Form -->
+
+    	<record model="ir.ui.view" id="siscond_owner_view_form">
+		    <field name="name">Owner Form</field>
+		    <field name="model">res.users</field>
+		    <field name="priority" eval="16"/>
+		    <field name="arch" type="xml">
+		        <form string="Owner the apartment">
+		        	<sheet>
+
+		        	<div class="oe_title">
+                     	<separator string="Propietarios" colspan="2"/>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Nombre" required="1"/>
+                            <field name="login" required="1" placeholder="Correo Electrónico"/>
+                        </h1>
+                    </div>
+                    <div class="oe_title">
+                    	<field name="is_company" on_change="on_change_is_company(is_company)"/><strong>¿Es una compañia?
+                    </strong>
+                    </div>
+				    <group colspan="4">
+				        <group colspan="2" col="2">
+				            <field name="identity_card" style="width: 40%%" attrs="{'invisible' : [('is_company', '=', True)],'required' : [('is_company', '=', False)]}"/>
+				            <field name="rif"  style="width: 40%%" attrs="{'invisible' : [('is_company', '=', False)],'required' : [('is_company', '=', True)]}"/>
+				            <field name="phone" required="1" style="width: 40%%"/>
+				            <field name="active"/>
+				            <field name="owner" invisible="1" on_change="on_change_owner_defaults()"/>
+				        </group>
+				    </group>
+				    <notebook>
+				    	<page string="Propiedades">
+				    		<field name="property_ids"/>
+				    	</page>
+				    	<page string="Grupos" invisible="1">
+				    		<field name="groups_id" on_change="on_change_groups_defaults(groups_id)"/>
+				    	</page>
+				    </notebook>
+				</sheet>
+				</form>
+		    </field>
+		</record>
+
+		<!-- View Tree -->
+
+		<record id="view_owner_tree" model="ir.ui.view">
+            <field name="name">Owner Tree</field>
+            <field name="model">res.users</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="owners">
+                    <field name="name"/>
+                    <field name="login" string="Correo Electrónico"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- window action -->
+        
+        <record model="ir.actions.act_window" id="siscond_owners_action">
+            <field name="name">Courses</field>
+            <field name="res_model">res.users</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="siscond_owner_view_form"/>
+            <field name="domain">[('owner','=',True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear el primer propietario
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="setting_owners_menu" name="Propietarios" parent="siscond_infrastructure.siscond_menu"
+                  action="siscond_owners_action"/>
+
+      
+    </data>
+</openerp>
