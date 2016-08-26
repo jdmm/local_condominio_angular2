@@ -1,0 +1,6 @@
+{
+"name": "miApp",
+"dependencies": {
+"angular": "~1.5.*"
+}
+}

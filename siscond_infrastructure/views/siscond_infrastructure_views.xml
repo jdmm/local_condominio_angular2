@@ -11,10 +11,14 @@
 		    <field name="arch" type="xml">
 		        <form string="Idea form">
 		        	<sheet>
-				    <group colspan="4">
-				        <group colspan="2" col="2">
-				            <separator string="General Infrastructure" colspan="2"/>
-				            <field name="name"/>
+				    <group col="2">
+              <separator string="Infraestructura" colspan="2"/>
+				        <group>
+                    <field name="name"/>
+                    <field name="contract_id"/>
+                </group> 
+                <group >
+				            <field name="company_id"/>
 				            <field name="active"/>
 				        </group>
 				    </group>
@@ -24,9 +28,9 @@
                   <field name="tower_ids"/>
                 </page>
                 <page string="Registro de Propiedades Comunes">
-                  <field name="property_commons_ids">
+                  <field name="property_commons_line_ids">
                     <tree editable="True">
-                        <field name="name"/>
+                        <field name="property_common_id"/>
                         <field name="description"/>
                       </tree>
                   </field>
@@ -81,7 +85,7 @@
         <!-- the following menuitem should appear *after*
              its parent openacademy_menu and *after* its
              action course_list_action -->
-        <menuitem id="setting_infrastructure_menu" name="Setting Infrastructure" parent="siscond_menu"
+        <menuitem id="setting_infrastructure_menu" name="Configuración de Infraestructura" parent="siscond_menu"
                   action="siscond_infrastructure_action"/>
         <!-- Full id location:
              action="openacademy.course_list_action"
