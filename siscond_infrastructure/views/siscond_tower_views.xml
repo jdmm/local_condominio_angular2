@@ -23,9 +23,9 @@
 				                  <field name="floor_ids"/>
 				                </page>
 				                <page string="Registro de Propiedades Comunes">
-				                  <field name="property_commons_ids">
+				                  <field name="property_commons_line_ids">
 				                    <tree editable="True">
-				                        <field name="name"/>
+				                        <field name="property_common_id"/>
 				                        <field name="description"/>
 				                      </tree>
 				                  </field>
