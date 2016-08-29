@@ -19,12 +19,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','siscond_infrastructure'],
+    'depends': ['base','website','siscond_infrastructure'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/siscond_owners_views.xml',
+        'views/siscond_owners_template.xml',
         'security/siscond_role.xml',
     ],
  
