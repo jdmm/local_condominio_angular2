@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.module.category" id="module_category_role_siscond">
+            <field name="name">Role Siscond</field>
+            <field name="description">Se define el rol de cada usuario</field>
+            <field name="sequence">16</field>
+        </record>
+        <record id="module_group_role_property" model="res.groups">
+            <field name="name">Propietario</field>
+            <field name="category_id" ref="module_category_role_siscond"/>
+        </record>
+    </data>
+</openerp>

@@ -6,8 +6,13 @@ class siscond_infrastructure(models.Model):
     _name = 'siscond_infrastructure.infrastructure'
 
     name = fields.Char('Nombre', help='Por favor, ingrese el nombre de la  infraestructura')
+    contract_id = fields.Many2one('sis_cond.registro_contrato',
+                                        'Contrato',
+                                        ondelete="cascade"
+                                        )
+    company_id = fields.Many2one("res.company", related="contract_id.company_id", string="Compañia", readonly=True)
     tower_ids = fields.One2many('siscond_infrastructure.tower', 'infrastructure_id', 'Towers Line')
-    property_commons_ids = fields.One2many('siscond_infrastructure.property_common', 'infrastructure_id', 'Property Commons Line')
+    property_commons_line_ids = fields.One2many('siscond_infrastructure.property_common_line', 'infrastructure_id', 'Property Commons Line')
     active = fields.Boolean('Active', default=True)
     
     
@@ -22,7 +27,7 @@ class siscond_tower(models.Model):
                                         'Infraestructura',
                                         ondelete="cascade"
                                         )
-    property_commons_ids = fields.One2many('siscond_infrastructure.property_common', 'tower_id', 'Property Commons Line')
+    property_commons_line_ids = fields.One2many('siscond_infrastructure.property_common_line', 'tower_id', 'Property Commons Line')
     floor_ids = fields.One2many('siscond_infrastructure.floor','tower_id', 'Registro de pisos')
     active = fields.Boolean('Active', default=True)
     
@@ -45,6 +50,16 @@ class siscond_property_common(models.Model):
 
 
     name = fields.Char('Nombre', help='Please enter the name of the property common')
+    description = fields.Char('Descripcion', help='Please enter the name of the property common')
+    # capacity=fields.Char('Capacidad')
+    active = fields.Boolean('Active', default=True)
+
+
+class siscond_property_common_line(models.Model):
+    _name = 'siscond_infrastructure.property_common_line'
+
+
+    property_common_id= fields.Many2one('siscond_infrastructure.property_common', 'Tipo de Propiedad Comun')
     description = fields.Char('Descripcion', help='Please enter the name of the property common')
     infrastructure_id = fields.Many2one('siscond_infrastructure.infrastructure',
                                         'Infrastructure',

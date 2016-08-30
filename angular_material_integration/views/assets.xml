@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+  		<template id="myplugins_style" name="My Plugins Style" inherit_id="website.assets_frontend">
+	    <xpath expr="link[last()]" position="after">
+	        <link rel="stylesheet" href="/angular_material_integration/static/src/app/bower_components/angular-material/angular-material.min.css"/>  
+
+
+	        <link rel="stylesheet" href="/angular_material_integration/static/src/css/services.css"/>
+
+	    </xpath>
+		</template>
+
+		<template id="myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
+	    <xpath expr="script[last()]" position="after">
+	    	<!-- Angularjs -->
+	         <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular/angular.min.js"/> 
+
+			 <!-- Dependency Angular Material -->
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-animate/angular-animate.min.js"/>
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-aria/angular-aria.min.js"/>
+			 
+			 <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-messages/angular-messages.min.js"/>
+			
+			 <!-- Angular Material  -->
+
+			  <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-material/angular-material.min.js"/>
+
+			 <!-- my js -->
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/layout_controller.js"/> 
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/service_controller.js"/>
+			 
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/modules/design_modules.js"/>
+			 
+	        
+	    </xpath>
+		</template>
+
+
+		
+    </data>
+  </openerp>
+

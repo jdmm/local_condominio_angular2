@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<openerp> 
+  <data>
+  	<!-- Customize header  -->
+	<template id="custom_header" inherit_id="website.layout" name="Custom Header">
+
+	  <!-- app angular  -->
+	  <xpath expr="//html" position="attributes">
+	    <attribute name="ng-app">MySecondApp</attribute>
+	  </xpath>
+
+	   <!-- Assign an id  -->
+	  <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+	    <attribute name="id">my_header</attribute>
+	  </xpath>
+
+	  <!-- Add an element after the top menu  -->
+	  <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
+	    <div class="container">
+	    <div ng-controller="FirstController" ng-cloak="" class="gridListdemoBasicUsage">
+	   	<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px" class="gridListdemoBasicUsage red">
+
+	        <strong>Welcome</strong> in our websiteeee!
+	        {{nombre}}
+	        {{apellido}}
+	       
+	        
+	         <md-input-container>
+		        <label>Nombre</label>
+		        <input ng-model="nombre"/>
+		     </md-input-container>
+
+		 </md-grid-list>
+	     </div>
+	      
+	    </div>
+	  </xpath>
+	</template>
+
+  </data> 
+</openerp>
