@@ -3,8 +3,8 @@
   <data>
   		<template id="myplugins_style" name="My Plugins Style" inherit_id="website.assets_frontend">
 	    <xpath expr="link[last()]" position="after">
-	        <link rel="stylesheet" href="/angular_material_integration/static/src/app/bower_components/angular-material/angular-material.min.css"/>  
 
+	        <link rel="stylesheet" href="/angular_material_integration/static/src/app/bower_components/angular-material/angular-material.min.css"/>  
 
 	        <link rel="stylesheet" href="/angular_material_integration/static/src/css/services.css"/>
 

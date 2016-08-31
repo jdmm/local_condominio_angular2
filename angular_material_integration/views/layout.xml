@@ -14,11 +14,46 @@
 	    <attribute name="id">my_header</attribute>
 	  </xpath>
 
+	  <xpath expr="//div[@id='wrapwrap']/header/div" position="replace">
+	    <div class="navbar navbar-default navbar-static-top hidden">
+	    	 <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="/" t-if="website" t-field="website.name">My Website</a>
+                            </div>
+                            <div class="collapse navbar-collapse navbar-top-collapse">
+                                <ul class="nav navbar-nav navbar-right" id="top_menu">
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="website.submenu"/>
+                                    </t>
+                                    <li class="divider" t-ignore="true" t-if="website.user_id != user_id"/>
+                                    <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <b>
+                                                <span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"/>
+                                                <span class="caret"></span>
+                                            </b>
+                                        </a>
+                                        <ul class="dropdown-menu js_usermenu" role="menu">
+                                            <li id="o_logout"><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+	    </div>
+	    </div>
+	  </xpath>
+
 	  <!-- Add an element after the top menu  -->
 	  <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
 	    <div class="container">
 	    <div ng-controller="FirstController" ng-cloak="" class="gridListdemoBasicUsage">
-	   	<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px" class="gridListdemoBasicUsage red">
+	   	<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px" class="gridListdemoBasicUsage gray">
 
 	        <strong>Welcome</strong> in our websiteeee!
 	        {{nombre}}
@@ -37,5 +72,45 @@
 	  </xpath>
 	</template>
 
+	<!-- <template id="layout_disabled_inherit" inherit_id="website.layout_logo_show">
+		<xpath expr="//xpath[@]" position="replace">
+        nkmkkm
+    	</xpath>
+	</template> -->
+
+	<template id="layout_angular_material" name="layout para angula.material">
+		<html ng-app="MySecondApp">
+			<head>
+				<t t-call="website.assets_frontend"/>
+			</head>
+			<header> 
+				<div ng-controller="FirstController" ng-cloak="" class="gridListdemoBasicUsage">
+			   	<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px" class="gridListdemoBasicUsage gray">
+						 <strong>Welcome</strong> in our websiteeee!
+			        {{nombre}}
+			        {{apellido}}
+			       
+			        
+			         <md-input-container>
+				        <label>Nombre</label>
+				        <input ng-model="nombre"/>
+				     </md-input-container>
+
+						 </md-grid-list>
+			     </div>
+			</header>
+
+		</html>
+	</template>
+
+	<template id="footer_inherit" inherit_id="website.footer_default">
+		<xpath expr="//div[@id='footer']" position="replace">
+			<div id="footer" class="container hidden-print">
+				
+			</div>
+			
+		</xpath>
+	</template>
+  
   </data> 
 </openerp>

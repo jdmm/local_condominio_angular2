@@ -1,5 +1,5 @@
 angular
-    .module('MyAppSelect',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+    .module('MyfirstApp')
     .controller('SelectedTextController', function($scope) {
       $scope.items = [1, 2, 3, 4, 5, 6, 7];
       $scope.selectedItem;

@@ -4,9 +4,8 @@
 
     	
     	
-    	<template id="myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
+    	<template id="owner_myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
 	    	<xpath expr="script[last()]" position="after">
-	    		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	       	 	<script type="text/javascript" src="/siscond_owner/static/src/js/controllers/siscond_owners.js"/>
 	   		</xpath>
 		</template>
@@ -20,7 +19,7 @@
                 	<div class="container">
                     	<div class="mt32">
                     		<p>hola</p>
-                    		<div ng-controller="SelectedTextController" class="md-padding selectdemoSelectedText" ng-cloak="" ng-app="MyAppSelect">
+                    		<div ng-controller="SelectedTextController" class="md-padding selectdemoSelectedText" ng-cloak="">
 							  <div>
 							    <h1 class="md-title">Pick an item below</h1>
 							    <div layout="row">
