@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- View Form -->
+
+        <record model="ir.ui.view" id="siscond_category_view_form">
+            <field name="name">Category Form Form</field>
+            <field name="model">siscond_category.category</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Category">
+                <sheet>
+                    <group col="2">
+                        <separator string="Categoría de Pagos" colspan="2"/>
+                        <group>
+                            <field name="category"/>
+                            <field name="contract_id"/>
+                        </group> 
+                        <group >
+                            <field name="company_id"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                     <separator string="Propiedades"/>
+                     <notebook>
+                        <page string="Propiedades">
+                          <field name="property_ids"></field>
+                        </page>
+                     </notebook> 
+                </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- View Tree -->
+
+        <record model="ir.ui.view" id="siscond_category_view_tree">
+            <field name="name">Category Tree</field>
+            <field name="model">siscond_category.category</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <tree string="Categoría">
+                    <field name="category"/>
+                    <field name="contract_id"/>
+                    <field name="active"/>
+                </tree>
+		    </field>
+		</record>
+
+        <record model="ir.actions.act_window" id="siscond_category_action">
+            <field name="name">Categoría</field>
+            <field name="res_model">siscond_category.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first category.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="siscond_configuracion_id" 
+                  name="Configuración"
+                  parent="siscond_infrastructure.main_siscond_menu"
+                  />
+        <menuitem id="setting_category_menu" 
+                  name="Categorías de pago" 
+                  parent="siscond_configuracion_id"
+                  action="siscond_category_action"
+                  />
+    </data>
+</openerp>
