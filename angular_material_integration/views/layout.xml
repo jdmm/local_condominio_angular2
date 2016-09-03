@@ -47,11 +47,19 @@
                             </div>
 	    </div>
 	    </div>
+	    <t t-call="angular_material_integration.Toolbar"/>
+	    <t t-call="angular_material_integration.SideNavMenu"/>
+	    
+	    
 	  </xpath>
 
 	  <!-- Add an element after the top menu  -->
 	  <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
-	    <div class="container">
+	    <!-- <div layout="row">
+	    <div flex="" style="background-color:red;">
+	    	Menu
+	    </div>
+	    <div flex="" >
 	    <div ng-controller="FirstController" ng-cloak="" class="gridListdemoBasicUsage">
 	   	<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px" class="gridListdemoBasicUsage gray">
 
@@ -67,8 +75,9 @@
 
 		 </md-grid-list>
 	     </div>
+	     </div>
 	      
-	    </div>
+	    </div> -->
 	  </xpath>
 	</template>
 
@@ -111,6 +120,78 @@
 			
 		</xpath>
 	</template>
+
+	<template id="editor_head_jpv" inherit_id="website.user_navbar" name="Editor">
+    
+    <xpath expr='//nav[@id="oe_main_menu_navbar"]' position="attributes">
+        <attribute name="class">hidden</attribute>
+    </xpath>
+    
+</template>
+
+
+<template id="SideNavMenu" name="SideNav Left">
+	<div ng-controller="SideNavController" layout="column" style="height: 500px;" ng-cloak="">
+		  <!-- <section layout="row" flex=""> -->
+		    <md-sidenav class="md-sidenav-left" md-component-id="left"
+		                md-disable-backdrop="" md-whiteframe="4">
+		      <md-toolbar class="md-theme-indigo md-warn">
+		        <div><h1 class="md-toolbar-tools">Menú</h1></div>
+		      </md-toolbar>
+		      <md-content layout-margin="">
+		        <p>
+		          This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+		        </p>
+		      </md-content>
+		      		<div layout="row" layout-align="top right" ng-controller="SideNavController">
+		     	 	<div>
+			        <md-button ng-click="toggleLeft()" class="md-icon-button md-warn">
+			          <md-icon md-svg-src="angular_material_integration/static/src/app/img/icons/ic_arrow_back_24px.svg"></md-icon>
+			        </md-button>
+		    		</div>
+				</div>
+		    </md-sidenav>
+		  <!-- </section> -->
+		</div>
+</template>
+<template id="Toolbar">
+	<div ng-controller="ToolbarController" layout="column" ng-cloak="" class="">
+	<div class="header md-accent-bg" flex="">
+	  <md-toolbar md-scroll-shrink="" ng-if="true" class="md-warn md-hue-3" style="background-color: transparent;" ng-controller="TitleController">
+	    <div class="md-toolbar-tools">
+	    	<div layout="column" layout-align="top left" ng-controller="SideNavController">
+		      <div>
+		          <md-button ng-click="toggleLeft()" aria-label="menu" class="md-fab md-warn">
+		            <md-icon md-svg-src="angular_material_integration/static/src/app/img/icons/menu.svg"></md-icon>
+		          </md-button>
+		        </div>
+		      </div>
+	      <h3 class="md-flex">
+	        <span>{{title}}</span>
+	      </h3>
+	    </div>
+	  </md-toolbar>
+	</div>
+	<md-content flex=""  md-scroll-y="" style="height:600px">
+	<!-- <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center"> -->
+	  <!-- <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in todos">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar"/>
+        <div class="md-list-item-text">
+          <h3>{{item.what}}</h3>
+          <h4>{{item.who}}</h4>
+          <p>
+            {{item.notes}}
+          </p>
+        </div>
+        <md-divider inset=""></md-divider>
+      </md-list-item>
+    </md-list> -->
+    <!-- </md-whiteframe> -->
+    <div class="" flex-offset="10" md-whiteframe="3" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">contenidokmskmakmkmkmkmkmkmkmkmkmkm</div>
+	  </md-content>
+	</div>
+</template>
   
   </data> 
 </openerp>

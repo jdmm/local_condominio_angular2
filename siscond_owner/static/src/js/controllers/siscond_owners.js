@@ -10,4 +10,4 @@ angular
           return "Please select an item";
         }
       };
-    });
+    }); 
