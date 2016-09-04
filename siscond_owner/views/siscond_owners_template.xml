@@ -15,10 +15,8 @@
 
         <template id="siscond_owner.massive_download_format_owners" name="">
         	<t t-call="website.layout">
-	            <div class="wrap">
-                	<div class="container">
-                    	<div class="mt32">
-                    		<p>hola</p>
+        		<t t-call="angular_material_integration.main">
+                    		<p>holaaaaaaamnmnmmbmmmmnbnmbm</p>
                     		<div ng-controller="SelectedTextController" class="md-padding selectdemoSelectedText" ng-cloak="">
 							  <div>
 							    <h1 class="md-title">Pick an item below</h1>
@@ -34,9 +32,9 @@
 							    </div>
 							  </div>
 							</div>
-                    	</div>
-                    </div>
-                </div>    
+                 
+                <!-- </div>     -->
+	        </t>
 	        </t>
         </template>
     </data>

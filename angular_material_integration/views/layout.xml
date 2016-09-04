@@ -53,6 +53,7 @@
 	    
 	  </xpath>
 
+
 	  <!-- Add an element after the top menu  -->
 	  <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
 	    <!-- <div layout="row">
@@ -131,9 +132,9 @@
 
 
 <template id="SideNavMenu" name="SideNav Left">
-	<div ng-controller="SideNavController" layout="column" style="height: 500px;" ng-cloak="">
+	<div ng-controller="SideNavController" layout="column"  ng-cloak="">
 		  <!-- <section layout="row" flex=""> -->
-		    <md-sidenav class="md-sidenav-left" md-component-id="left"
+		    <md-sidenav class="md-sidenav-left"  md-component-id="left"
 		                md-disable-backdrop="" md-whiteframe="4">
 		      <md-toolbar class="md-theme-indigo md-warn">
 		        <div><h1 class="md-toolbar-tools">Menú</h1></div>
@@ -146,7 +147,7 @@
 		      		<div layout="row" layout-align="top right" ng-controller="SideNavController">
 		     	 	<div>
 			        <md-button ng-click="toggleLeft()" class="md-icon-button md-warn">
-			          <md-icon md-svg-src="angular_material_integration/static/src/app/img/icons/ic_arrow_back_24px.svg"></md-icon>
+			          <md-icon md-svg-src="/angular_material_integration/static/src/app/img/icons/ic_arrow_back_24px.svg"></md-icon>
 			        </md-button>
 		    		</div>
 				</div>
@@ -172,7 +173,7 @@
 	    </div>
 	  </md-toolbar>
 	</div>
-	<md-content flex=""  md-scroll-y="" style="height:600px">
+	<!-- <md-content flex=""  md-scroll-y="" style="height:600px"> -->
 	<!-- <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center"> -->
 	  <!-- <md-list>
       <md-list-item class="md-3-line" ng-repeat="item in todos">
@@ -188,9 +189,17 @@
       </md-list-item>
     </md-list> -->
     <!-- </md-whiteframe> -->
-    <div class="" flex-offset="10" md-whiteframe="3" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">contenidokmskmakmkmkmkmkmkmkmkmkmkm</div>
-	  </md-content>
+    <!-- <div class="page" flex-offset="10" md-whiteframe="3" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">contenidokmskmakmkmkmkmkmkmkmkmkmkm</div> -->
+	  <!-- </md-content> -->
 	</div>
+</template>
+
+<template id="main">
+	<md-content flex=""  md-scroll-y="">
+    <div class="page" flex-offset="10" md-whiteframe="1" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">
+    		<t t-raw="0"/>
+    </div>
+	  </md-content>
 </template>
   
   </data> 

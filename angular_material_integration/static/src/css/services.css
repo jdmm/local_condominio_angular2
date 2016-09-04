@@ -86,6 +86,13 @@
   width: 48px;
   margin: 16px; }
 
+.page{
+  height:600px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+
+}
+
 .whiteframedemoBasicClassUsage {
   /* For breakpoint `-xs` */
   /* For breakpoint `-sm` */
