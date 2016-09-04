@@ -16,7 +16,7 @@
         <template id="siscond_owner.massive_download_format_owners" name="">
         	<t t-call="website.layout">
         		<t t-call="angular_material_integration.main">
-                    		<p>holaaaaaaamnmnmmbmmmmnbnmbm</p>
+                    		<p>hola</p>
                     		<div ng-controller="SelectedTextController" class="md-padding selectdemoSelectedText" ng-cloak="">
 							  <div>
 							    <h1 class="md-title">Pick an item below</h1>

@@ -163,7 +163,7 @@
 	    	<div layout="column" layout-align="top left" ng-controller="SideNavController">
 		      <div>
 		          <md-button ng-click="toggleLeft()" aria-label="menu" class="md-fab md-warn">
-		            <md-icon md-svg-src="angular_material_integration/static/src/app/img/icons/menu.svg"></md-icon>
+		            <md-icon md-svg-src="/angular_material_integration/static/src/app/img/icons/menu.svg"></md-icon>
 		          </md-button>
 		        </div>
 		      </div>
