@@ -135,7 +135,7 @@
 	<div ng-controller="SideNavController" layout="column"  ng-cloak="">
 		  <!-- <section layout="row" flex=""> -->
 		    <md-sidenav class="md-sidenav-left"  md-component-id="left"
-		                md-disable-backdrop="" md-whiteframe="4">
+		                md-disable-backdrop="" md-whiteframe="8">
 		      <md-toolbar class="md-theme-indigo md-warn">
 		        <div><h1 class="md-toolbar-tools">Menú</h1></div>
 		      </md-toolbar>
@@ -157,7 +157,7 @@
 </template>
 <template id="Toolbar">
 	<div ng-controller="ToolbarController" layout="column" ng-cloak="" class="">
-	<div class="header md-accent-bg" flex="">
+	<div class="header md-accent-bg md-whiteframe-4dp" flex="">
 	  <md-toolbar md-scroll-shrink="" ng-if="true" class="md-warn md-hue-3" style="background-color: transparent;" ng-controller="TitleController">
 	    <div class="md-toolbar-tools">
 	    	<div layout="column" layout-align="top left" ng-controller="SideNavController">
@@ -195,8 +195,8 @@
 </template>
 
 <template id="main">
-	<md-content flex=""  md-scroll-y="">
-    <div class="page" flex-offset="10" md-whiteframe="1" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">
+	<md-content  flex=""  md-scroll-y="" style="margin-top:5px;">
+    <div class="page" flex-offset="10" md-whiteframe="2" layout-align="center center" flex-sm="45" flex-gt-sm="35" flex-gt-md="80">
     		<t t-raw="0"/>
     </div>
 	  </md-content>
