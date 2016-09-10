@@ -29,6 +29,9 @@
 			  <script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-material/angular-material.min.js"/>
 
 			 <!-- my js -->
+			 
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/angular_integration.js"/> 
 
 			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/layout_controller.js"/> 
 

@@ -40,6 +40,7 @@
 							    </md-select>
 							    <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
 							  </div>
+							  <a>{users}</a>
 							</div>
                  
                 <!-- </div>     -->
