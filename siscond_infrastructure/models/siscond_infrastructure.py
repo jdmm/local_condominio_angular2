@@ -31,8 +31,9 @@ class siscond_tower(models.Model):
     floor_ids = fields.One2many('siscond_infrastructure.floor','tower_id', 'Registro de pisos')
     active = fields.Boolean('Active', default=True)
     
-    
-    
+    @api.multi
+    def search_towers(self,infrastructure_id):
+		return self.name_search('',[('id','=',infrastructure_id)])
 
 class siscond_floor(models.Model):
     _name = 'siscond_infrastructure.floor'

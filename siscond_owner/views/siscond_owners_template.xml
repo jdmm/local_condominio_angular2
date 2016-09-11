@@ -1,50 +1,35 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
-
-    	
-    	
     	<template id="owner_myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
 	    	<xpath expr="script[last()]" position="after">
 	       	 	<script type="text/javascript" src="/siscond_owner/static/src/js/controllers/siscond_owners.js"/>
 	   		</xpath>
 		</template>
-
-
-
-
         <template id="siscond_owner.massive_download_format_owners" name="">
         	<t t-call="website.layout">
         		<t t-call="angular_material_integration.main">
-                    		<p>hola</p>
-                    		<div ng-controller="SelectedTextController" class="md-padding selectdemoSelectedText" ng-cloak="">
-							  <div>
-							    <h1 class="md-title">Pick an item below</h1>
-							    <div layout="row">
-							      <md-input-container>
-							        <label>Items</label>
-							        <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
-							          <md-optgroup label="items">
-							            <md-option ng-value="item" ng-repeat="item in items">Item {{item}}</md-option>
-							          </md-optgroup>
-							        </md-select>
-							      </md-input-container>
-							    </div>
-							  </div>
-							</div>
-							<div ng-controller="SelectedTextController" layout="column" layout-align="center center" style="padding:40px" ng-cloak="">
-							  <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
-							  <div layout="column" layout-align="center center">
-							    <md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
-							      <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
-							    </md-select>
-							    <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
-							  </div>
-							  <a>{users}</a>
-							</div>
-                 
-                <!-- </div>     -->
-	        </t>
+					<div ng-controller="SelectedTowers" layout="column" layout-align="" style="padding:40px" ng-cloak="">
+						<div layout="row" layout-align="">
+							
+							<md-input-container>
+								<section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+									<label>Torres</label>
+									<md-select placeholder="Torres" ng-model="tower" md-on-open="loadTowers()" style="min-width: 200px;" md-selected-text="getSelectedText()">
+									  <md-option  ng-value="tower" ng-repeat="tower in towers">{{tower.name}}</md-option>
+									</md-select>
+									<md-button class="md-fab md-mini md-primary" icon="play_for_work" aria-label="Use Android">
+										<ng-md-icon icon="play_for_work" style="fill: ..." size="..."></ng-md-icon> 
+<!--
+										<md-icon md-svg-src="" style="color: greenyellow;"></md-icon>
+-->
+									</md-button>
+								</section>
+							</md-input-container>
+							
+						</div>
+					</div>
+				</t>
 	        </t>
         </template>
     </data>
