@@ -1,4 +1,4 @@
-var app = angular.module("MyfirstApp",['ngMaterial']);
+var app = angular.module("MyfirstApp",['ngMaterial','ngMdIcons']);
 app.controller('FirstController',function ($scope) {
 	$scope.nombre = "Daniel";
 	
