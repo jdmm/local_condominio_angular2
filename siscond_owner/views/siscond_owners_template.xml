@@ -9,20 +9,18 @@
         <template id="siscond_owner.massive_download_format_owners" name="">
         	<t t-call="website.layout">
         		<t t-call="angular_material_integration.main">
-					<div ng-controller="SelectedTowers" layout="column" layout-align="" style="padding:40px" ng-cloak="">
-						<div layout="row" layout-align="">
+					<div ng-controller="SelectedTowers" layout="column" layout-align=""  style="padding:40px" ng-cloak="">
+						<div  layout="row" layout-align="">
 							
 							<md-input-container>
 								<section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
 									<label>Torres</label>
-									<md-select placeholder="Torres" ng-model="tower" md-on-open="loadTowers()" style="min-width: 200px;" md-selected-text="getSelectedText()">
+									<md-select placeholder="Torres" ng-model="tower" ng-required="true" md-on-open="loadTowers()" style="min-width: 200px;" md-selected-text="getSelectedText()">
 									  <md-option  ng-value="tower" ng-repeat="tower in towers">{{tower.name}}</md-option>
 									</md-select>
-									<md-button class="md-fab md-mini md-primary" icon="play_for_work" aria-label="Use Android">
-										<ng-md-icon icon="play_for_work" style="fill: ..." size="..."></ng-md-icon> 
-<!--
-										<md-icon md-svg-src="" style="color: greenyellow;"></md-icon>
--->
+									<md-button class="md-fab md-mini md-primary md-raised"  ng-click="dowloadExcel($event)" aria-label="Descargar Excel">
+										<ng-md-icon icon="file_download" style="fill: lightgreen" ></ng-md-icon>
+										<md-tooltip >Descargar Excel</md-tooltip>
 									</md-button>
 								</section>
 							</md-input-container>
