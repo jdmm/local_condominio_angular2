@@ -45,7 +45,6 @@
 			 angular icons
 -->
 			<script type="text/javascript" src="/angular_material_integration/static/src/app/bower_components/angular-material-icons/angular-material-icons.min.js"/> 
-	        
 	    </xpath>
 		</template>
 
