@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+  		<template id="tour_heroes.myplugins_style" name="My Plugins Style" inherit_id="website.assets_frontend">
+	    <xpath expr="link[last()]" position="after">
+
+
+	        <link rel="stylesheet" href="/angular_material_integration/static/src/css/services.css"/>
+
+	    </xpath>
+		</template>
+
+		<template id="tour_heroes.myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
+	    <xpath expr="script[last()]" position="after">
+	    	
+	    	<!-- Angularjs -->
+
+	    	<link rel="stylesheet" href="/tour_heroes/static/src/css/styles.css"/>
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+		    <!-- <script src="/tour_heroes/static/src/node_modules/core-js/client/shim.min.js"></script>
+		    <script src="/tour_heroes/static/src/node_modules/zone.js/dist/zone.js"></script>
+		    <script src="/tour_heroes/static/src/node_modules/reflect-metadata/Reflect.js"></script>
+		    <script src="/tour_heroes/static/src/node_modules/systemjs/dist/system.src.js"></script> -->
+    <!-- 2. Configure SystemJS -->
+    		<script src="/tour_heroes/static/src/systemjs.config.js"></script>
+		    <script>
+		      System.import('app').catch(function(err){ console.error(err); });
+		    </script>
+
+
+	    </xpath>
+		</template>
+
+
+		
+    </data>
+  </openerp>
+

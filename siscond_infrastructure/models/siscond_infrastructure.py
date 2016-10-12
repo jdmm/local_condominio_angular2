@@ -35,6 +35,9 @@ class siscond_tower(models.Model):
     def search_towers(self,infrastructure_id):
 		return self.name_search('',[('id','=',infrastructure_id)])
 
+    # def create(self,cr,uid, vals,context=None):
+    #     print vals
+
 class siscond_floor(models.Model):
     _name = 'siscond_infrastructure.floor'
 

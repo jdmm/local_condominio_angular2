@@ -5,8 +5,8 @@ from openerp import models, fields, api
 class siscond_category(models.Model):
     _name = 'siscond_category.category'
 
-    category = fields.Char('Nombre', help='Por favor, ingrese el nombre\
-                            para la categoría de gastos.',
+    category = fields.Char('Nombre', help='Por favor, ingrese el nombre'\
+                            'para la categoría de gastos.',
                             require=True,
                             )
     contract_id = fields.Many2one('sis_cond.registro_contrato',

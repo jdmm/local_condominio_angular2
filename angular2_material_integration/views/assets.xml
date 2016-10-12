@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+  		<template id="myplugins_style" name="My Plugins Style" inherit_id="website.assets_frontend">
+	    <xpath expr="link[last()]" position="after">
+
+
+
+			<!--angular-material-->
+	        <!--<link rel="stylesheet" href="/angular2_material_integration/static/src/node_modules/@angular/material/core/style/core.css"/>-->
+	        <link rel="stylesheet" href="/angular2_material_integration/static/src/node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css"/>
+
+	    </xpath>
+		</template>
+
+		<template id="myplugins_js" name="My Plugins" inherit_id="website.assets_frontend">
+	    <xpath expr="script[last()]" position="after">
+	    	
+	    	<!-- Angularjs -->
+
+	    	<link rel="stylesheet" href="/angular2_material_integration/static/src/css/styles.css"/>
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+		    <script src="/angular2_material_integration/static/src/node_modules/core-js/client/shim.min.js"></script>
+		    <script src="/angular2_material_integration/static/src/node_modules/zone.js/dist/zone.js"></script>
+		    <script src="/angular2_material_integration/static/src/node_modules/reflect-metadata/Reflect.js"></script>
+		    <script src="/angular2_material_integration/static/src/node_modules/systemjs/dist/system.src.js"></script>
+		    <script src="/angular2_material_integration/static/src/node_modules/hammerjs/hammer.min.js"></script>
+    <!-- 2. Configure SystemJS -->
+    		<script src="/angular2_material_integration/static/src/systemjs.config.js"></script>
+
+		    <script>
+		      System.import('app').catch(function(err){ console.error(err); });
+		    </script>
+
+
+	    </xpath>
+		</template>
+
+
+		
+    </data>
+  </openerp>
+

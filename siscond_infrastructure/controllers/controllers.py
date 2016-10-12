@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from openerp import http
 
-# class SiscondInfraestructure(http.Controller):
-#     @http.route('/siscond_infraestructura/siscond_infraestructura/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class SiscondInfraestructure(http.Controller):
+    @http.route('/siscond_infrastructure/siscond_infrastructure/', auth='public')
+    def index(self, **kw):
+        return "Hello, world"
 
 #     @http.route('/siscond_infraestructura/siscond_infraestructura/objects/', auth='public')
 #     def list(self, **kw):

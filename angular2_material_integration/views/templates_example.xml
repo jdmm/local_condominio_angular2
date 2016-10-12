@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <template id="template_example" name="">
+        	<t t-call="website.layout">
+        		
+	        </t>
+        </template>
+    </data>
+</openerp>

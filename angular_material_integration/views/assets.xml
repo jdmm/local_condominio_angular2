@@ -33,9 +33,14 @@
 			 <!-- my js -->
 			 
 
-			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/angular_integration.js"/> 
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/app.js"/> 
 
 			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/layout_controller.js"/> 
+
+			 <script type="text/javascript" src="/angular_material_integration/static/src/js/services/callModels.js"/> 
+
+
 
 			 <script type="text/javascript" src="/angular_material_integration/static/src/js/controllers/service_controller.js"/>
 			 
